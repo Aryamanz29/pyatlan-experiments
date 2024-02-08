@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 130
+filename = *.py
+ignore = W503
+exclude = env,venv,__pycache__
