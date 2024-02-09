@@ -418,5 +418,5 @@ class DbtModel(Dbt):
 from datetime import datetime  # noqa: E402
 from .dbt_metric import DbtMetric  # noqa: E402
 from .dbt_test import DbtTest  # noqa: E402
-from .sql import SQL  # noqa: E402
+from ..sql import SQL  # noqa: E402
 from .dbt_model_column import DbtModelColumn  # noqa: E402

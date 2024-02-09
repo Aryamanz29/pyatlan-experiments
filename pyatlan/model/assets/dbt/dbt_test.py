@@ -276,6 +276,6 @@ class DbtTest(Dbt):
 
 
 from .dbt_source import DbtSource  # noqa: E402
-from .sql import SQL  # noqa: E402
+from ..sql import SQL  # noqa: E402
 from .dbt_model import DbtModel  # noqa: E402
 from .dbt_model_column import DbtModelColumn  # noqa: E402

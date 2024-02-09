@@ -6,7 +6,7 @@ from pydantic import Field, validator
 
 # from pyatlan.model.fields.atlan_fields import KeywordField
 
-from .catalog import Catalog
+from .catalog.catalog import Catalog
 
 
 class Matillion(Catalog):

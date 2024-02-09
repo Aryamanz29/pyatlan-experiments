@@ -7,7 +7,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .catalog import Catalog
+from ..catalog.catalog import Catalog
 
 
 class Airflow(Catalog):
@@ -186,7 +186,7 @@ class Airflow(Catalog):
             None, description="", alias="airflowRunEndTime"
         )
 
-    attributes: "Airflow.Attributes" = Field(
+    attributes: Airflow.Attributes = Field(
         default_factory=lambda: Airflow.Attributes(),
         description="Map of attributes in the instance and their values. The specific keys of this map will vary by "
         "type, so are described in the sub-types of this schema.\n",

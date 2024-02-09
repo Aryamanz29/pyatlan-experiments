@@ -255,4 +255,4 @@ class Referenceable(AtlanObject):
     unique_attributes: Optional[dict[str, Any]] = Field(None)
 
 
-from .atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402
+from .atlas.atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402

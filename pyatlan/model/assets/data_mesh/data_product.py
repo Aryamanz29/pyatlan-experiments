@@ -278,4 +278,4 @@ class DataProduct(DataMesh):
 
 
 from .data_domain import DataDomain  # noqa: E402
-from .asset import Asset  # noqa: E402
+from ..asset import Asset  # noqa: E402

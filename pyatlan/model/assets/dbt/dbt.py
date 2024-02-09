@@ -1,12 +1,12 @@
 from __future__ import annotations
-
+from datetime import datetime
 from typing import ClassVar, Optional
 
 from pydantic import Field, validator
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, KeywordTextField, NumericField
 
-from .catalog import Catalog
+from ..catalog.catalog import Catalog
 
 
 class Dbt(Catalog):
@@ -410,6 +410,3 @@ class Dbt(Catalog):
         description="Map of attributes in the instance and their values. The specific keys of this map will vary by "
         "type, so are described in the sub-types of this schema.\n",
     )
-
-
-from datetime import datetime  # noqa: E402

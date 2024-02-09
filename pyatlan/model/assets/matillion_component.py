@@ -277,5 +277,5 @@ class MatillionComponent(Matillion):
     )
 
 
-from .process import Process  # noqa: E402
+from .process.process import Process  # noqa: E402
 from .matillion_job import MatillionJob  # noqa: E402

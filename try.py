@@ -5,35 +5,104 @@ import inspect
 import time
 
 
+print("--- try.py import start ---\n")
 st = time.time()
-from pyatlan.model.assets import *
+
+from pyatlan.model.assets.atlas import AtlasGlossary
+from pyatlan.model.assets.atlas import AtlasGlossaryTerm
+from pyatlan.model.assets.atlas import AtlasGlossaryCategory
+from pyatlan.model.assets.airflow import Airflow  # this fails
+from pyatlan.model.assets.process import Process
+from pyatlan.model.assets.process import ColumnProcess
+from pyatlan.model.assets.catalog import Catalog
+from pyatlan.model.assets.dbt import Dbt
+from pyatlan.model.assets.dbt import DbtMetric
+from pyatlan.model.assets.dbt import DbtTest
+from pyatlan.model.assets.dbt import DbtSource
+from pyatlan.model.assets.dbt import DbtModel
+from pyatlan.model.assets.dbt import DbtModelColumn
+from pyatlan.model.assets.data_mesh import DataMesh
+from pyatlan.model.assets.data_mesh import DataDomain
+from pyatlan.model.assets.data_mesh import DataProduct
 
 et = time.time()
-
-models_directory = "pyatlan/model/assets"
-model_files = [f for f in os.listdir(models_directory) if f.endswith(".py")]
-
-instances = {}
-for model_file in model_files:
-    model_module_name = model_file[:-3]
-    full_path = f"{'.'.join(models_directory.split('/'))}.{model_module_name}"
-
-    model_module = importlib.import_module(full_path, package=__name__)
-    model_classes = [
-        obj
-        for name, obj in inspect.getmembers(model_module, inspect.isclass)
-        if issubclass(obj, AtlanObject) and obj.__module__ == full_path
-    ]
-    # Create instances
-    for model_class in model_classes:
-        class_name = model_class.__name__
-        class_instance = model_class()
-        instances[class_name] = class_instance
-
-for model_name, instance in instances.items():
-    print(f"\n Created: {model_name}()")
-print(f"\nTotal models: {len(instances.items())}")
+print("\n--- try.py import end ---")
 print(f"Total import time: {et - st:.2f} secs")
+
+st = time.time()
+
+example = AtlasGlossary()
+example.guid = "1"
+example.qualified_name = "QN"
+gt = AtlasGlossaryTerm()
+gc = AtlasGlossaryCategory()
+# af = Airflow()
+pro = Process()
+cp = ColumnProcess()
+ct = Catalog()
+
+# dbt = Dbt()
+# dt = DbtTest()
+# dmt = DbtMetric()
+# ds = DbtSource()
+# dm = DbtModel()
+# dmc = DbtModelColumn()
+
+# data_m = DataMesh()
+data_d = DataDomain()
+data_pro = DataProduct()
+
+et = time.time()
+print(f"Total instantiation time: {et - st:.2f} secs")
+
+# example = AtlasGlossaryCategory()
+# example.guid = "1"
+# example.qualified_name = "QN"
+# example = AtlasGlossaryTerm()
+# example.guid = "1"
+# example.qualified_name = "QN"
+
+# example = AtlasGlossary()
+# example.guid = "1"
+# example.qualified_name = "QN"
+# example = AtlasGlossaryCategory()
+# example.guid = "1"
+# example.qualified_name = "QN"
+# example = AtlasGlossaryTerm()
+# example.guid = "1"
+# example.qualified_name = "QN"
+
+# af = Airflow()
+
+# st = time.time()
+# from pyatlan.model.assets import *
+
+# et = time.time()
+
+# models_directory = "pyatlan/model/assets"
+# model_files = [f for f in os.listdir(models_directory) if f.endswith(".py")]
+
+# instances = {}
+# for model_file in model_files:
+#     model_module_name = model_file[:-3]
+#     full_path = f"{'.'.join(models_directory.split('/'))}.{model_module_name}"
+
+#     model_module = importlib.import_module(full_path, package=__name__)
+#     model_classes = [
+#         obj
+#         for name, obj in inspect.getmembers(model_module, inspect.isclass)
+#         if issubclass(obj, AtlanObject) and obj.__module__ == full_path
+#     ]
+#     # Create instances
+#     for model_class in model_classes:
+#         class_name = model_class.__name__
+#         class_instance = model_class()
+#         instances[class_name] = class_instance
+
+# for model_name, instance in instances.items():
+#     print(f"\n Created: {model_name}()")
+# print(f"\nTotal models: {len(instances.items())}")
+# print(f"Total import time: {et - st:.2f} secs")
 
 
 # start = time.time()

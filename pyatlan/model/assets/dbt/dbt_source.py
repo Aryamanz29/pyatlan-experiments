@@ -131,5 +131,5 @@ class DbtSource(Dbt):
     )
 
 
-from .sql import SQL  # noqa: E402
+from ..sql import SQL  # noqa: E402
 from .dbt_test import DbtTest  # noqa: E402

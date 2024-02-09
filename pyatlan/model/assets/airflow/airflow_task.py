@@ -360,6 +360,6 @@ class AirflowTask(Airflow):
     )
 
 
-from .catalog import Catalog  # noqa: E402
-from .process import Process  # noqa: E402
+from ..catalog.catalog import Catalog  # noqa: E402
+from ..process.process import Process  # noqa: E402
 from .airflow_dag import AirflowDag  # noqa: E402

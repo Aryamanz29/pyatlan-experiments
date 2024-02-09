@@ -189,6 +189,6 @@ class DbtModelColumn(Dbt):
     )
 
 
-from .column import Column  # noqa: E402
+from ..column import Column  # noqa: E402
 from .dbt_model import DbtModel  # noqa: E402
 from .dbt_test import DbtTest  # noqa: E402
