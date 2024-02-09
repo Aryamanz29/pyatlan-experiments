@@ -6,7 +6,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .asset import Asset
+from ..base.asset import Asset
 
 
 class Process(Asset):
@@ -177,6 +177,6 @@ class Process(Asset):
     )
 
 
-from .catalog import Catalog  # noqa: E402
-from .airflow_task import AirflowTask  # noqa: E402
-from .column_process import ColumnProcess  # noqa: E402
+from ..catalog.catalog import Catalog  # noqa: E402
+from ..airflow_task import AirflowTask  # noqa: E402
+from ..column_process import ColumnProcess  # noqa: E402

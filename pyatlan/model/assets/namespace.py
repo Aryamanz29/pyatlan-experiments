@@ -6,7 +6,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .asset import Asset
+from .base.asset import Asset
 
 
 class Namespace(Asset):

@@ -5,35 +5,71 @@ import inspect
 import time
 
 
+print("-- try.py import start ---\n")
 st = time.time()
-from pyatlan.model.assets import *
+
+from pyatlan.model.assets.atlas_glossary import AtlasGlossary
+from pyatlan.model.assets.atlas_glossary_term import AtlasGlossaryTerm
+from pyatlan.model.assets.atlas_glossary_category import AtlasGlossaryCategory
+from pyatlan.model.assets.airflow import Airflow
 
 et = time.time()
-
-models_directory = "pyatlan/model/assets"
-model_files = [f for f in os.listdir(models_directory) if f.endswith(".py")]
-
-instances = {}
-for model_file in model_files:
-    model_module_name = model_file[:-3]
-    full_path = f"{'.'.join(models_directory.split('/'))}.{model_module_name}"
-
-    model_module = importlib.import_module(full_path, package=__name__)
-    model_classes = [
-        obj
-        for name, obj in inspect.getmembers(model_module, inspect.isclass)
-        if issubclass(obj, AtlanObject) and obj.__module__ == full_path
-    ]
-    # Create instances
-    for model_class in model_classes:
-        class_name = model_class.__name__
-        class_instance = model_class()
-        instances[class_name] = class_instance
-
-for model_name, instance in instances.items():
-    print(f"\n Created: {model_name}()")
-print(f"\nTotal models: {len(instances.items())}")
+print("\n--- try.py import end ---")
 print(f"Total import time: {et - st:.2f} secs")
+
+st = time.time()
+example = AtlasGlossary()
+example.guid = "1"
+example.qualified_name = "QN"
+example = AtlasGlossaryCategory()
+example.guid = "1"
+example.qualified_name = "QN"
+example = AtlasGlossaryTerm()
+example.guid = "1"
+example.qualified_name = "QN"
+af = Airflow()
+# example = AtlasGlossary()
+# example.guid = "1"
+# example.qualified_name = "QN"
+# example = AtlasGlossaryCategory()
+# example.guid = "1"
+# example.qualified_name = "QN"
+# example = AtlasGlossaryTerm()
+# example.guid = "1"
+# example.qualified_name = "QN"
+
+et = time.time()
+print(f"Total instantiation time: {et - st:.2f} secs")
+
+# st = time.time()
+# from pyatlan.model.assets import *
+
+# et = time.time()
+
+# models_directory = "pyatlan/model/assets"
+# model_files = [f for f in os.listdir(models_directory) if f.endswith(".py")]
+
+# instances = {}
+# for model_file in model_files:
+#     model_module_name = model_file[:-3]
+#     full_path = f"{'.'.join(models_directory.split('/'))}.{model_module_name}"
+
+#     model_module = importlib.import_module(full_path, package=__name__)
+#     model_classes = [
+#         obj
+#         for name, obj in inspect.getmembers(model_module, inspect.isclass)
+#         if issubclass(obj, AtlanObject) and obj.__module__ == full_path
+#     ]
+#     # Create instances
+#     for model_class in model_classes:
+#         class_name = model_class.__name__
+#         class_instance = model_class()
+#         instances[class_name] = class_instance
+
+# for model_name, instance in instances.items():
+#     print(f"\n Created: {model_name}()")
+# print(f"\nTotal models: {len(instances.items())}")
+# print(f"Total import time: {et - st:.2f} secs")
 
 
 # start = time.time()

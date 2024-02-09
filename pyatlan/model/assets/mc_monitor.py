@@ -463,4 +463,4 @@ class MCMonitor(MonteCarlo):
 
 
 from datetime import datetime  # noqa: E402
-from .asset import Asset  # noqa: E402
+from .base.asset import Asset  # noqa: E402

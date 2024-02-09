@@ -175,4 +175,4 @@ class Metric(DataQuality):
 
 
 from .column import Column  # noqa: E402
-from .asset import Asset  # noqa: E402
+from .base.asset import Asset  # noqa: E402

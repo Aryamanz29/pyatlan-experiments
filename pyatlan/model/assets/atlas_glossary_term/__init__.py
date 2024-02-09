@@ -1,0 +1,1 @@
+from .atlas_glossary_term import AtlasGlossaryTerm

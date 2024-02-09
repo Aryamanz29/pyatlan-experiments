@@ -1,23 +1,10 @@
-print("super-init called...")
-# Top-down, abstract first...
-from .base.atlan_object import AtlanObject
-from .base.referenceable import Referenceable
-from .base.asset import Asset
-
-from .schema_registry_subject import SchemaRegistrySubject
-from .mc_monitor import MCMonitor
-from .data_product import DataProduct
-from .file import File
-from .mc_incident import MCIncident
-from .link import Link
-from .metric import Metric
-from .readme import Readme
-from .soda_check import SodaCheck
-from .process.process import Process
-from .airflow_task import AirflowTask
-
-Referenceable.model_rebuild()
-print("super-init end...")
+print("super-init (base) called...")
+# # # Top-down, abstract first...
+# from .atlan_object import AtlanObject
+# from .referenceable import Referenceable
+# from .asset import Asset
+# Referenceable.model_rebuild()
+print("super-init (base) end...")
 
 # # Any leaves of that abstract class next (these are direct-from-Asset)
 # from .atlas_glossary import AtlasGlossary

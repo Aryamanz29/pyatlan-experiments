@@ -6,7 +6,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .process import Process
+from .process.process import Process
 
 
 class ColumnProcess(Process):

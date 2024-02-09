@@ -7,7 +7,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .catalog import Catalog
+from ..catalog.catalog import Catalog
 
 
 class Airflow(Catalog):

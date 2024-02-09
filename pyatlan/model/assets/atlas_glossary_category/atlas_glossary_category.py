@@ -6,7 +6,7 @@ from pydantic import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
-from .asset import Asset
+from ..base.asset import Asset
 
 
 class AtlasGlossaryCategory(Asset):
@@ -203,5 +203,6 @@ class AtlasGlossaryCategory(Asset):
     )
 
 
-from .atlas_glossary import AtlasGlossary  # noqa: E402
-from .atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402
+from ..atlas_glossary_term.atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402
+from ..atlas_glossary.atlas_glossary import AtlasGlossary  # noqa: E402
+

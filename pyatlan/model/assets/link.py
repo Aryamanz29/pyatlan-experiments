@@ -117,4 +117,4 @@ class Link(Resource):
     )
 
 
-from .asset import Asset  # noqa: E402
+from .base.asset import Asset  # noqa: E402

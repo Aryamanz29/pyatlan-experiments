@@ -21,7 +21,6 @@ class Referenceable(AtlanObject):
     """Description"""
 
     def __init__(__pydantic_self__, **data: Any) -> None:
-
         super().__init__(**data)
         __pydantic_self__.__fields_set__.update(["attributes", "type_name"])
         # __pydantic_self__._metadata_proxy = CustomMetadataProxy(
@@ -255,4 +254,4 @@ class Referenceable(AtlanObject):
     unique_attributes: Optional[dict[str, Any]] = Field(None)
 
 
-from .atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402
+from ..atlas_glossary_term.atlas_glossary_term import AtlasGlossaryTerm  # noqa: E402

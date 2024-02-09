@@ -617,4 +617,4 @@ class DbtMetric(Dbt):
 from datetime import datetime  # noqa: E402
 from .column import Column  # noqa: E402
 from .dbt_model import DbtModel  # noqa: E402
-from .asset import Asset  # noqa: E402
+from .base.asset import Asset  # noqa: E402

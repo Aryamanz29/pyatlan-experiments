@@ -7,7 +7,7 @@ from pydantic import Field, validator
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 from pyatlan.model.enums import SchemaRegistrySchemaType
 
-from .catalog import Catalog
+from .catalog.catalog import Catalog
 
 
 class SchemaRegistry(Catalog):
