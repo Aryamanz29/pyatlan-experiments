@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
@@ -13,7 +13,7 @@ from .catalog import Catalog
 class SQL(Catalog):
     """Description"""
 
-    type_name: str = Field("SQL", allow_mutation=False)
+    type_name: str = Field("SQL")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "SQL":

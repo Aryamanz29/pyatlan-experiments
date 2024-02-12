@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict
+from pydantic.v1 import BaseModel, ConfigDict
 from pydantic.alias_generators import to_camel
 
 

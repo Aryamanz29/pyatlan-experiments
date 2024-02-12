@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from .custom_metadata import CustomMetadataDict, CustomMetadataProxy
 # from pyatlan.model.fields.atlan_fields import (

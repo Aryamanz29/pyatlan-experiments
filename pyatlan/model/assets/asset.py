@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from pyatlan.model.fields.atlan_fields import (
 #     BooleanField,
@@ -187,7 +187,7 @@ class Asset(Referenceable):
     # def remove_certificate(self):
     #     self.attributes.remove_certificate()
 
-    type_name: str = Field("Asset", allow_mutation=False)
+    type_name: str = Field("Asset")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "Asset":

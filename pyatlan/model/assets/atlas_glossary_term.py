@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
@@ -35,7 +35,7 @@ class AtlasGlossaryTerm(Asset):
     # CATEGORIES: ClassVar[KeywordField] = KeywordField("categories", "__categories")
     # """Categories in which the term is organized, searchable by the qualifiedName of the category."""
 
-    type_name: str = Field("AtlasGlossaryTerm", allow_mutation=False)
+    type_name: str = Field("AtlasGlossaryTerm")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "AtlasGlossaryTerm":

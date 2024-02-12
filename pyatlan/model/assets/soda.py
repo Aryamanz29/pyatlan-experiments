@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pydantic import Field, validator
+from pydantic.v1 import Field, validator
 
 from .data_quality import DataQuality
 
@@ -10,7 +10,7 @@ from .data_quality import DataQuality
 class Soda(DataQuality):
     """Description"""
 
-    type_name: str = Field("Soda", allow_mutation=False)
+    type_name: str = Field("Soda")  #, allow_mutation=False)
 
     @validator("type_name")
     def validate_type_name(cls, v):

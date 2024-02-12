@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 from .resource import Resource
 
@@ -20,7 +20,7 @@ class Readme(Resource):
             self.attributes = self.Attributes()
         self.attributes.description = description
 
-    type_name: str = Field("Readme", allow_mutation=False)
+    type_name: str = Field("Readme")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "Readme":

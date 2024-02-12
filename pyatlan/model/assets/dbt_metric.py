@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field, validator
+from pydantic.v1 import Field, validator
 
 # from pyatlan.model.fields.atlan_fields import TextField, KeywordField, KeywordTextField, RelationField
 # from pyatlan.model.structs import DbtMetricFilter
@@ -13,7 +13,7 @@ from .dbt import Dbt
 class DbtMetric(Dbt):
     """Description"""
 
-    type_name: str = Field("DbtMetric", allow_mutation=False)
+    type_name: str = Field("DbtMetric")  #, allow_mutation=False)
 
     @validator("type_name")
     def validate_type_name(cls, v):

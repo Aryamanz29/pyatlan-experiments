@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field, validator
+from pydantic.v1 import Field, validator
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, BooleanField, RelationField
 
@@ -12,7 +12,7 @@ from .sql import SQL
 class SnowflakePipe(SQL):
     """Description"""
 
-    type_name: str = Field("SnowflakePipe", allow_mutation=False)
+    type_name: str = Field("SnowflakePipe")  #, allow_mutation=False)
 
     @validator("type_name")
     def validate_type_name(cls, v):

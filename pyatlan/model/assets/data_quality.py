@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
@@ -12,7 +12,7 @@ from .catalog import Catalog
 class DataQuality(Catalog):
     """Description"""
 
-    type_name: str = Field("DataQuality", allow_mutation=False)
+    type_name: str = Field("DataQuality")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "DataQuality":

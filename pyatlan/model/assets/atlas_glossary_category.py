@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field
+from pydantic.v1 import Field
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 
@@ -45,7 +45,7 @@ class AtlasGlossaryCategory(Asset):
     # )
     # """Parent category in which a subcategory is contained, searchable by the qualifiedName of the category."""
 
-    type_name: str = Field("AtlasGlossaryCategory", allow_mutation=False)
+    type_name: str = Field("AtlasGlossaryCategory")  #, allow_mutation=False)
 
     def validate_type_name(cls, v):
         if v != "AtlasGlossaryCategory":

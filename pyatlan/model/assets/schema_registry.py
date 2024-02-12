@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import ClassVar, Optional
 
-from pydantic import Field, validator
+from pydantic.v1 import Field, validator
 
 # from pyatlan.model.fields.atlan_fields import KeywordField, RelationField
 from pyatlan.model.enums import SchemaRegistrySchemaType
@@ -13,7 +13,7 @@ from .catalog import Catalog
 class SchemaRegistry(Catalog):
     """Description"""
 
-    type_name: str = Field("SchemaRegistry", allow_mutation=False)
+    type_name: str = Field("SchemaRegistry")  #, allow_mutation=False)
 
     @validator("type_name")
     def validate_type_name(cls, v):
