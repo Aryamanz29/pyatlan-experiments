@@ -174,5 +174,8 @@ class Metric(DataQuality):
     )
 
 
+from .asset import Asset  # noqa: E402
+from .catalog import Catalog  # noqa: E402
+from .sql import SQL  # noqa: E402
 from .column import Column  # noqa: E402
 from .asset import Asset  # noqa: E402
