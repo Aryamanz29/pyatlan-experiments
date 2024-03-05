@@ -17,7 +17,7 @@ perform_check() {
 
 # Formatter
 black-check() {
-    perform_check "black" "black --check --quiet ." "black ."
+    perform_check "black" "black --exclude=venv --check --quiet ." "black ."
 }
 
 # Linter

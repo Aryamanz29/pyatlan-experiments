@@ -1,3 +1,7 @@
+# dev deps
+ipdb
 black
 flake8
-pydantic
+
+# pyatlan main
+git+https://github.com/atlanhq/atlan-python.git@main
